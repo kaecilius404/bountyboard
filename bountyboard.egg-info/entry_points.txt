@@ -1,0 +1,2 @@
+[console_scripts]
+bountyboard = bountyboard.cli:main

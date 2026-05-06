@@ -1,0 +1,357 @@
+{
+  "WordPress": {
+    "headers": {"X-Powered-By": "WordPress"},
+    "cookies": ["wordpress_", "wp-settings-", "wp_"],
+    "body_patterns": ["wp-content/", "wp-includes/", "wp-json/", "xmlrpc.php"],
+    "paths": ["/wp-admin/", "/wp-login.php", "/wp-json/"],
+    "meta": {"generator": "WordPress"},
+    "category": "CMS"
+  },
+  "Drupal": {
+    "headers": {"X-Generator": "Drupal", "X-Drupal-Cache": ""},
+    "cookies": ["Drupal.visitor.", "SESS"],
+    "body_patterns": ["/sites/default/files/", "Drupal.settings", "drupal.js"],
+    "paths": ["/user/login", "/admin/config"],
+    "meta": {"generator": "Drupal"},
+    "category": "CMS"
+  },
+  "Joomla": {
+    "body_patterns": ["/media/jui/", "joomla!", "index.php?option=com_"],
+    "paths": ["/administrator/", "/components/"],
+    "meta": {"generator": "Joomla"},
+    "category": "CMS"
+  },
+  "Magento": {
+    "cookies": ["PHPSESSID", "frontend"],
+    "body_patterns": ["Mage.Cookies", "mage/cookies", "/skin/frontend/"],
+    "paths": ["/admin/", "/index.php/admin/"],
+    "category": "CMS"
+  },
+  "Shopify": {
+    "headers": {"X-ShopId": "", "X-ShopifyRequestId": ""},
+    "body_patterns": ["cdn.shopify.com", "shopify.com/s/files"],
+    "category": "CMS"
+  },
+  "Ghost": {
+    "headers": {"X-Powered-By": "Ghost"},
+    "body_patterns": ["ghost.io", "content/themes/"],
+    "paths": ["/ghost/"],
+    "category": "CMS"
+  },
+  "Laravel": {
+    "cookies": ["laravel_session", "XSRF-TOKEN"],
+    "body_patterns": ["laravel_session", "csrf-token"],
+    "paths": ["/storage/logs/laravel.log"],
+    "category": "Framework"
+  },
+  "Symfony": {
+    "headers": {"X-Debug-Token": "", "X-Debug-Token-Link": ""},
+    "body_patterns": ["sf-toolbar", "symfony"],
+    "paths": ["/_profiler", "/_wdt"],
+    "category": "Framework"
+  },
+  "Django": {
+    "cookies": ["csrftoken", "sessionid"],
+    "body_patterns": ["csrfmiddlewaretoken", "djdt", "__admin_media_prefix__"],
+    "paths": ["/admin/", "/static/admin/"],
+    "category": "Framework"
+  },
+  "Flask": {
+    "cookies": ["session"],
+    "headers": {"Server": "Werkzeug"},
+    "body_patterns": ["Werkzeug", "Flask"],
+    "category": "Framework"
+  },
+  "Ruby on Rails": {
+    "cookies": ["_session_id", "_rails_session"],
+    "headers": {"X-Runtime": "", "X-Powered-By": "Phusion Passenger"},
+    "body_patterns": ["Rails.application.config", "data-turbo"],
+    "category": "Framework"
+  },
+  "Express": {
+    "headers": {"X-Powered-By": "Express"},
+    "category": "Framework"
+  },
+  "Next.js": {
+    "headers": {"X-Powered-By": "Next.js"},
+    "body_patterns": ["__NEXT_DATA__", "_next/static/", "/_next/"],
+    "category": "Framework"
+  },
+  "Nuxt": {
+    "body_patterns": ["__nuxt", "window.__NUXT__", "/_nuxt/"],
+    "category": "Framework"
+  },
+  "Spring Boot": {
+    "cookies": ["JSESSIONID"],
+    "headers": {"X-Application-Context": ""},
+    "body_patterns": ["spring", "Whitelabel Error Page"],
+    "paths": ["/actuator", "/actuator/health"],
+    "category": "Framework"
+  },
+  "ASP.NET": {
+    "cookies": ["ASP.NET_SessionId", "__RequestVerificationToken"],
+    "headers": {"X-Powered-By": "ASP.NET", "X-AspNet-Version": ""},
+    "body_patterns": ["__VIEWSTATE", "__EVENTVALIDATION"],
+    "category": "Framework"
+  },
+  "FastAPI": {
+    "body_patterns": ["FastAPI", "openapi.json"],
+    "paths": ["/docs", "/redoc", "/openapi.json"],
+    "category": "Framework"
+  },
+  "Angular": {
+    "body_patterns": ["ng-version=", "angular.js", "@angular/core"],
+    "category": "JavaScript Framework"
+  },
+  "React": {
+    "body_patterns": ["react.production.min.js", "react-dom", "__reactFiber"],
+    "category": "JavaScript Framework"
+  },
+  "Vue.js": {
+    "body_patterns": ["vue.min.js", "vue.runtime.min.js", "__vue__"],
+    "category": "JavaScript Framework"
+  },
+  "Apache": {
+    "headers": {"Server": "Apache"},
+    "body_patterns": ["Apache/", "Apache HTTP Server"],
+    "paths": ["/server-status", "/server-info"],
+    "category": "Web Server"
+  },
+  "Nginx": {
+    "headers": {"Server": "nginx"},
+    "body_patterns": ["nginx"],
+    "paths": ["/nginx_status"],
+    "category": "Web Server"
+  },
+  "IIS": {
+    "headers": {"Server": "Microsoft-IIS", "X-Powered-By": "ASP.NET"},
+    "body_patterns": ["iisstart.htm", "Microsoft-IIS"],
+    "category": "Web Server"
+  },
+  "Tomcat": {
+    "headers": {"Server": "Apache-Coyote"},
+    "body_patterns": ["Apache Tomcat", "Coyote"],
+    "paths": ["/manager/html", "/host-manager/html"],
+    "category": "Web Server"
+  },
+  "JBoss": {
+    "body_patterns": ["JBoss", "WildFly"],
+    "paths": ["/jmx-console/", "/web-console/"],
+    "category": "Web Server"
+  },
+  "WebLogic": {
+    "headers": {"Server": "WebLogic"},
+    "body_patterns": ["WebLogic", "Oracle WebLogic"],
+    "category": "Web Server"
+  },
+  "Jetty": {
+    "headers": {"Server": "Jetty"},
+    "body_patterns": ["Powered by Jetty"],
+    "category": "Web Server"
+  },
+  "Cloudflare": {
+    "headers": {"CF-Ray": "", "Server": "cloudflare"},
+    "cookies": ["__cfduid", "cf_clearance", "__cf_bm"],
+    "category": "CDN"
+  },
+  "CloudFront": {
+    "headers": {"X-Amz-Cf-Id": "", "Via": "CloudFront", "X-Cache": ""},
+    "category": "CDN"
+  },
+  "Akamai": {
+    "headers": {"X-Check-Cacheable": "", "X-Akamai-Request-ID": ""},
+    "category": "CDN"
+  },
+  "Fastly": {
+    "headers": {"Fastly-Debug-Digest": "", "X-Fastly-Request-ID": "", "X-Served-By": ""},
+    "category": "CDN"
+  },
+  "Varnish": {
+    "headers": {"X-Varnish": "", "Via": "varnish"},
+    "category": "CDN"
+  },
+  "Netlify": {
+    "headers": {"Server": "Netlify", "X-Nf-Request-Id": ""},
+    "category": "Hosting"
+  },
+  "Vercel": {
+    "headers": {"Server": "Vercel", "X-Vercel-Id": ""},
+    "category": "Hosting"
+  },
+  "Heroku": {
+    "headers": {"Via": "1.1 vegur"},
+    "category": "Hosting"
+  },
+  "Jenkins": {
+    "headers": {"X-Jenkins": "", "X-Hudson": ""},
+    "body_patterns": ["Jenkins", "Hudson"],
+    "paths": ["/login", "/manage", "/script"],
+    "category": "DevOps"
+  },
+  "GitLab": {
+    "body_patterns": ["GitLab", "gl-header-nav"],
+    "paths": ["/users/sign_in", "/explore", "/-/health"],
+    "category": "DevOps"
+  },
+  "Grafana": {
+    "body_patterns": ["Grafana", "grafana_session"],
+    "paths": ["/login", "/api/health"],
+    "cookies": ["grafana_session"],
+    "category": "Monitoring"
+  },
+  "Kibana": {
+    "body_patterns": ["Kibana", "kibanaWelcomeLogo"],
+    "paths": ["/app/kibana", "/api/status"],
+    "category": "Monitoring"
+  },
+  "Prometheus": {
+    "body_patterns": ["Prometheus", "prometheus_build_info"],
+    "paths": ["/metrics", "/graph", "/-/ready"],
+    "category": "Monitoring"
+  },
+  "Elasticsearch": {
+    "body_patterns": ["elasticsearch", "cluster_name"],
+    "paths": ["/_cluster/health", "/_cat/indices", "/_nodes"],
+    "category": "Database"
+  },
+  "phpMyAdmin": {
+    "body_patterns": ["phpMyAdmin", "pma_"],
+    "paths": ["/phpmyadmin/", "/pma/"],
+    "cookies": ["phpMyAdmin"],
+    "category": "Admin Panel"
+  },
+  "Keycloak": {
+    "body_patterns": ["Keycloak", "kc-header"],
+    "paths": ["/auth/", "/realms/"],
+    "category": "Auth"
+  },
+  "Auth0": {
+    "body_patterns": ["auth0", "Auth0Lock"],
+    "category": "Auth"
+  },
+  "Okta": {
+    "body_patterns": ["okta", "oktaWidget"],
+    "category": "Auth"
+  },
+  "Swagger UI": {
+    "body_patterns": ["swagger-ui", "SwaggerUIBundle", "Swagger UI"],
+    "paths": ["/swagger-ui.html", "/api-docs", "/swagger/index.html"],
+    "category": "API"
+  },
+  "GraphQL": {
+    "body_patterns": ["graphql", "__schema", "GraphiQL"],
+    "paths": ["/graphql", "/graphiql", "/playground"],
+    "category": "API"
+  },
+  "Kubernetes": {
+    "body_patterns": ["kubernetes", "kubectl"],
+    "paths": ["/api/v1", "/apis", "/healthz"],
+    "category": "Infrastructure"
+  },
+  "Docker Registry": {
+    "headers": {"Docker-Distribution-Api-Version": ""},
+    "paths": ["/v2/", "/v2/_catalog"],
+    "category": "Infrastructure"
+  },
+  "MinIO": {
+    "body_patterns": ["MinIO", "minio"],
+    "paths": ["/minio/login", "/minio/health/live"],
+    "category": "Storage"
+  },
+  "Traefik": {
+    "headers": {"X-Powered-By": ""},
+    "body_patterns": ["Traefik"],
+    "paths": ["/api/rawdata", "/api/http/routers"],
+    "category": "Infrastructure"
+  },
+  "CouchDB": {
+    "headers": {"Server": "CouchDB"},
+    "body_patterns": ["CouchDB", "Welcome to CouchDB"],
+    "paths": ["/_utils/", "/_all_dbs"],
+    "category": "Database"
+  },
+  "RabbitMQ": {
+    "body_patterns": ["RabbitMQ", "rabbitmq"],
+    "paths": ["/api/", "/#/"],
+    "category": "Message Queue"
+  },
+  "Solr": {
+    "body_patterns": ["Apache Solr", "SolrCore"],
+    "paths": ["/solr/", "/solr/admin/"],
+    "category": "Search"
+  },
+  "Splunk": {
+    "body_patterns": ["Splunk", "splunk"],
+    "paths": ["/en-US/account/login"],
+    "category": "Monitoring"
+  },
+  "Portainer": {
+    "body_patterns": ["Portainer", "portainer"],
+    "paths": ["/#/auth", "/api/status"],
+    "category": "Infrastructure"
+  },
+  "ArgoCD": {
+    "body_patterns": ["Argo CD", "argocd"],
+    "paths": ["/auth/login"],
+    "category": "DevOps"
+  },
+  "Datadog": {
+    "body_patterns": ["Datadog", "datadoghq"],
+    "category": "Monitoring"
+  },
+  "New Relic": {
+    "body_patterns": ["New Relic", "newrelic"],
+    "category": "Monitoring"
+  },
+  "Confluence": {
+    "body_patterns": ["Atlassian Confluence", "confluence"],
+    "paths": ["/login.action", "/index.action"],
+    "cookies": ["JSESSIONID", "confluence.browse.space.cookie"],
+    "category": "Wiki"
+  },
+  "Jira": {
+    "body_patterns": ["Atlassian Jira", "jira-navigation"],
+    "paths": ["/login.jsp", "/secure/Dashboard.jspa"],
+    "category": "Project Management"
+  },
+  "Strapi": {
+    "body_patterns": ["Strapi", "strapi-admin"],
+    "paths": ["/admin/", "/admin/auth/login"],
+    "category": "CMS"
+  },
+  "Supabase": {
+    "headers": {"X-Supabase-Edge-Version": ""},
+    "body_patterns": ["supabase"],
+    "category": "Platform"
+  },
+  "Firebase": {
+    "body_patterns": ["firebase", "firebaseapp.com"],
+    "category": "Platform"
+  },
+  "OpenVPN": {
+    "body_patterns": ["OpenVPN", "openvpn"],
+    "category": "VPN"
+  },
+  "Pulse Secure": {
+    "body_patterns": ["Pulse Secure", "pulseSecure"],
+    "category": "VPN"
+  },
+  "Fortinet": {
+    "headers": {"Server": "xxxxxxxx-xxxx"},
+    "body_patterns": ["Fortinet", "FortiGate", "fgt_lang"],
+    "category": "Security"
+  },
+  "Palo Alto": {
+    "body_patterns": ["PAN-OS", "Palo Alto Networks", "GlobalProtect"],
+    "category": "Security"
+  },
+  "F5 BIG-IP": {
+    "cookies": ["BIGipServer", "TS01"],
+    "headers": {"Server": "BigIP"},
+    "category": "Load Balancer"
+  },
+  "HAProxy": {
+    "headers": {"Server": "haproxy", "X-Served-By": ""},
+    "category": "Load Balancer"
+  }
+}

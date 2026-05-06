@@ -1,0 +1,91 @@
+# BountyBoard Configuration
+# Copy this file to config.yaml and customize it.
+# All API keys are optional — the tool works without any of them.
+
+programs:
+  - name: "Example Corp"
+    platform: "hackerone"  # hackerone, bugcrowd, intigriti, private
+    domains:
+      - "example.com"
+    wildcard_scope:
+      - "*.example.com"
+    exclude:
+      - "*.cdn.example.com"
+    notes: "Public program. Full scope."
+
+  - name: "Another Target"
+    platform: "bugcrowd"
+    domains:
+      - "anothertarget.com"
+      - "api.anothertarget.com"
+    wildcard_scope:
+      - "*.anothertarget.com"
+    exclude: []
+    notes: ""
+
+settings:
+  # ---- Performance ----
+  threads: 100
+  dns_threads: 200
+  http_timeout: 10          # seconds per HTTP request
+  dns_timeout: 5            # seconds per DNS query
+  screenshot_timeout: 20    # seconds per screenshot
+  batch_size: 500           # subdomains per processing batch
+
+  # ---- Features ----
+  screenshot_enabled: true
+  brute_force_enabled: false  # Only enable with explicit permission
+  permutation_engine: true
+  check_wayback: true
+  check_commoncrawl: true
+
+  # ---- API Keys (all optional) ----
+  # Without keys, the tool still uses 10+ free sources.
+  # With keys, it uses even more data for better coverage.
+  chaos_api_key: ""
+  securitytrails_api_key: ""
+  shodan_api_key: ""
+  github_token: ""          # Increases rate limit from 60 to 5000/hr
+  urlscan_api_key: ""       # Optional, increases rate limit
+  alienvault_otx_key: ""    # Optional
+
+  # ---- Paths ----
+  database_path: "bountyboard.db"
+  screenshot_dir: "screenshots"
+  output_dir: "reports"
+  wordlist_dir: "wordlists"
+
+  # ---- Notifications (optional) ----
+  # Critical findings will be posted here immediately
+  discord_webhook: ""
+  slack_webhook: ""
+  notify_severity: "critical"  # critical, high, medium, low (minimum level to notify)
+
+  # ---- Scheduling ----
+  scan_interval_hours: 12   # For bountyboard watch mode
+
+  # ---- Limits ----
+  max_subdomains_per_domain: 50000
+  max_screenshots_per_run: 200
+  max_permutations_per_subdomain: 50
+
+  # ---- HTTP Probing Ports ----
+  http_ports:
+    - 80
+    - 443
+    - 8008
+    - 8080
+    - 8443
+    - 3000
+    - 4443
+    - 5000
+    - 5443
+    - 7001
+    - 8000
+    - 8888
+    - 9000
+    - 9090
+    - 9200
+    - 9443
+    - 10000
+    - 10443
