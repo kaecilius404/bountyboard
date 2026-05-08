@@ -19,7 +19,7 @@ BountyBoard doesn't just find subdomains. It finds *forgotten infrastructure* â€
 
 ```bash
 # 1. Install
-git clone https://github.com/yourhandle/bountyboard
+git clone https://github.com/kaecilius404/bountyboard
 cd bountyboard
 pip install -e .
 playwright install chromium
